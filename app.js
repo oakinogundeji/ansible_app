@@ -49,12 +49,7 @@ app.set('layout', 'layout');
  * dBase connection
  */
 //=============================================================================
-if(!process.env.NODE_ENV) {
-  dBURL = config.dBURL;
-}
-else {
-  dBURL = process.env.dBURL;
-}
+dBURL = process.env.dBURL;
 mongoose.connect(dBURL);
 db = mongoose.connection;
 db.on('error', function (err) {
