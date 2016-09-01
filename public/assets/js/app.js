@@ -65,13 +65,18 @@ const app = Vue.extend({
  * Create router instance
  */
 //=============================================================================
-let router = new VueRouter();
+let router = new VueRouter({
+  history: true,
+  root: '/'});
 //=============================================================================
 /**
  * Define Routes
  */
 //=============================================================================
 router.map({
+  '/': {
+    component: app
+  },
   '/home': {
     name: 'home',
     component: Home
